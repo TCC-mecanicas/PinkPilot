@@ -3,11 +3,9 @@ import Navbar from "../Navbar/Navbar";
 function Header() {
     return ( 
         <>
-        <header className="flex justify-around bg-black text-zinc-50 p-4">
-            <span>Olá, visitante!</span>
-            <h1>Bem-vindo ao MovieApp!</h1>
+        <header className="flex justify-around bg-margentinha p-4 text-white p-5">
             <Navbar/>
-        </header>
+        </header>    
         </>
      );
 }

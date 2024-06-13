@@ -1,10 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './css/tailwind.css'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 import Loja from './Pages/Loja.jsx'
 import Sobre from './Pages/Sobre.jsx'
 import Comunidade from './Pages/Comunidade.jsx'
