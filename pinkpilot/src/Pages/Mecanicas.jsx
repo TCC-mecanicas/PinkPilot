@@ -1,6 +1,12 @@
+import Banner from '../Componentes/Banner/Banner'
+import CardServ from '../Componentes/CardServ/CardServ'
+
 function Mecanicas() {
     return ( 
-        <h1>Mecanicas</h1>
+        <div>
+            <Banner/>
+            <CardServ/>
+        </div>
      );
 }
 

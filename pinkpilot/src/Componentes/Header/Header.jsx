@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 function Header() {
     return ( 
         <>
-        <header className="flex justify-around bg-margentinha p-4 text-white p-5">
+        <header className="flex justify-around text-preto p-5">
             <Navbar/>
         </header>    
         </>

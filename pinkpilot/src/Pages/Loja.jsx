@@ -1,7 +1,12 @@
+import CardsProd from "../Componentes/CardsProd/CardsProd";
+
 function Loja() {
     return ( 
-        <h1>Loja</h1>
-     );
+        <>
+
+            <CardsProd/>
+        </>
+     )
 }
 
 export default Loja ;

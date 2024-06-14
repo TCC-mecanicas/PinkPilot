@@ -9,7 +9,8 @@ export default {
       colors: {
         "preto": "#4a3a3a",
         "margentinha": "#951b4a",
-        "rosinha": "#e9bdc0"
+        "rosinha": "#e9bdc0",
+        "clarinho": "#F2E0E1"
       }
     },
   },
