@@ -13,6 +13,7 @@ const servicos = [
       href: '#',
       imageSrc: card1,
       imageAlt: "logoCard1",
+      color: 'bg-clarinho',
       text: 'Troca de câmbio: substituição de uma transmissão defeituosa por uma nova ou recondicionada para garantir o funcionamento do veículo.'
 },
 {
@@ -21,6 +22,7 @@ const servicos = [
     href: '#',
     imageSrc: card2,
     imageAlt: "logoCard2",
+    color: 'bg-card2',
     text: 'Troca de suspensão: substituição dos componentes desgastados ou danificados do sistema de suspensão de um veículo por novos, visando melhorar o conforto, estabilidade e segurança durante a condução.'
 },
 {
@@ -29,6 +31,7 @@ const servicos = [
     href: '#',
     imageSrc: card3,
     imageAlt: "logoCard3",
+    color: 'bg-rosinha',
     text: 'Reparo ou troca de sistema de injeção eletrônica: Serviço que repara ou substitui componentes defeituosos do sistema de injeção eletrônica, responsável pelo controle de combustível e ignição para garantir a eficiência do motor.'
 },
 {
@@ -37,6 +40,7 @@ const servicos = [
     href: '#',
     imageSrc: card4,
     imageAlt: "logoCard4",
+    color: 'bg-card4',
     text: 'Revisão: Verificação completa de todos os sistemas e componentes do veículo, como motor, freios, suspensão e sistema elétrico, para identificar e corrigir problemas, assegurando o bom funcionamento do veículo.'
 },
 {
@@ -45,6 +49,7 @@ const servicos = [
     href: '#',
     imageSrc: card5,
     imageAlt: "logoCard5",
+    color: 'bg-card5',
     text: 'Reparo ou troca de freios: Serviço para substituir componentes desgastados ou danificados do sistema de freios por novos, garantindo a eficiência na frenagem e a segurança do veículo.'
 },
 {
@@ -53,6 +58,7 @@ const servicos = [
     href: '#',
     imageSrc: card6,
     imageAlt: "logoCard6",
+    color: 'bg-card6',
     text: 'Troca ou reparo de motor: substituição ou conserto do motor de um veículo devido a falhas mecânicas, desgaste excessivo ou danos, garantindo seu bom funcionamento e desempenho.'
 },
 {
@@ -61,30 +67,34 @@ const servicos = [
     href: '#',
     imageSrc: card7,
     imageAlt: "logoCard7",
+    color: 'bg-card7',
     text: 'Reparo elétrico geral: Serviço para reparar ou substituir componentes elétricos defeituosos, como sistemas de iluminação, partida e carregamento da bateria, garantindo o bom funcionamento dos sistemas elétricos do veículo.'
 }
-
-
-
 
 ]
 
 function CardServ(){
     return(
         <>
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 p-5">
-            {servicos.map((servicos) => (
-                <div key={servicos.id} className="block max-w-sm p-6 bg-clarinho border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                    <div className='flex '>
-                    <img 
-                    src={servicos.imageSrc} 
-                    alt={servicos.imageAlt}/>
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{servicos.name}</h5>
-                    </div>
-                    <p className="font-normal text-gray-700 dark:text-gray-400">{servicos.text}</p>
-                </div>
-            ))}     
-        </div>
+        <div className="font-sans gap-x-3 gap-y-10 grid sm:grid-cols-2 base:grid-cols-3 xl:grid-cols-3 xl:gap-x-8 p-5">
+  {servicos.map((servico) => (
+    <div
+      key={servico.id}
+      className={`block max-w-sm p-6 border  border-gray-200 rounded-lg shadow ${servico.color}`}
+    >
+      <div className='flex '>
+        <img
+          src={servico.imageSrc}
+          alt={servico.imageAlt}
+        />
+        <h5 className="pl-2 text-2xl font-bold tracking-tight self-center text-textCardS">
+          {servico.name}
+        </h5>
+      </div>
+      <p className="font-normal text-textCardS">{servico.text}</p>
+    </div>
+  ))}
+</div>
         </>
     )
 }

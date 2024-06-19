@@ -1,6 +1,13 @@
+import Pesq from "../Componentes/Pesq/Pesq";
+
 function Comunidade() {
     return ( 
-        <h1>Comunidade</h1>
+        <>
+
+        
+        
+        <Pesq/>
+        </>
      );
 }
 

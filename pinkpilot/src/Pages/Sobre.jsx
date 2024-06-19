@@ -1,6 +1,12 @@
+import Pesq from "../Componentes/Pesq/Pesq";
+import ContSobre from "../Componentes/contSobre/ContSobre";
+
 function Sobre() {
     return ( 
-        <h1>Sobre</h1>
+        <>
+         <Pesq/>
+         <ContSobre/>
+        </>
      );
 }
 

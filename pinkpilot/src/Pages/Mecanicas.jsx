@@ -14,3 +14,4 @@ function Mecanicas() {
 }
 
 export default Mecanicas ;
+
