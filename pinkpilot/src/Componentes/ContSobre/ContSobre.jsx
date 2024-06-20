@@ -1,10 +1,38 @@
 import imgSob1 from '../../../public/imgSob1.svg'
 import imgSob2 from '../../../public/imgSob2.svg'
 
+const team = [
+  {
+      avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+      name: "Gabrielly Barbosa Camilo",
+      title: "(Marketing/ Finanças)",
+  },
+  {
+      avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+      name: "Giovanna Luiza Bento",
+      title: "(Front-end)",
+  },
+  {
+      avatar: "https://randomuser.me/api/portraits/women/79.jpg",
+      name: "Isabella Hikari Chinen",
+      title: "(Designer)",
+  },
+  {
+      avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+      name: "Luana Gomes da Silva",
+      title: "(Back-End)",
+  },
+  {
+      avatar: "https://randomuser.me/api/portraits/men/86.jpg",
+      name: "Mariana Ayumi Kitsuse",
+      title: "(Design/Marketing)",
+  }
+]
+
 function ContSobre(){
   return (
     <>
-    <div className="flex items-center justify-center  px-5 ">
+    <div className="flex items-center justify-center px-5 ">
       <div className="max-w-7xl w-full flex items-center">
         {/* Contêiner para o texto */}
         <div className="flex-1 text-center">
@@ -47,6 +75,48 @@ function ContSobre(){
       
     </div>
   </div>
+
+  <section class="pb-12 bg-gray-50 text-center">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center flex-col lg:flex-row  ">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+                <h2 class="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7">
+                    Conheça nossa equipe criativa
+                </h2>
+                <p class="text-lg text-gray-500 mb-16">
+                    
+                  Dictumst vitae habitant consequat vestibulum a nisi at. Id at sit felis ipsum id facilisis vitae vitae vel. Adipiscing aliquet mauris quisque et quis urna molestie gravida tortor. Gravida pellentesque purus placerat enim tincidunt sagittis aliquet. Ut vulputate vestibulum et ipsum. Interdum pellentesque pellentesque vitae accumsan amet.
+
+                </p>
+                <button class="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0">
+                    Nos siga nas redes sociais
+                </button>
+            </div>
+            <div className="mt-12">
+                    <ul className="grid gap-8  md:grid-cols-4 lg:grid-cols-3">
+                        {
+                            team.map((item, idx) => (
+                                <li key={idx}>
+                                    <div className="w-30 h-30 mx-auto">
+                                        <img
+                                            src={item.avatar}
+                                            className="w-full h-full rounded-full"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="mt-2">
+                                        <h4 className="text-cinza font-semibold sm:text-lg">{item.name}</h4>
+                                        <p className="text-cinza">{item.title}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
   </>
   )
 }
