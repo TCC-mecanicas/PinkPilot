@@ -8,7 +8,7 @@ module.exports = withMt({
   content: [
     "./index.html",
     "./src/**/*.{js,jsx}",
-  ],
+  ], 
   theme: {
     extend: {
       colors: {
@@ -21,8 +21,10 @@ module.exports = withMt({
         "card4": "#D698A5",
         "card5": "#BF6B84",
         "card6": "#AA4367",
-        "card7": "#A0325D",
-        "cinza": "#3D3D3D"
+        "card8": "#A0325D",
+        "card7": "#932D51",
+        "cinza": "#3D3D3D",
+        "post": "#FFF0F1"
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],

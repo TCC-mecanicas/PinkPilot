@@ -1,29 +1,36 @@
 import imgSob1 from '../../../public/imgSob1.svg'
 import imgSob2 from '../../../public/imgSob2.svg'
 
+import Isa from '../../../public/Isa.png'
+import Mari from '../../../public/Mari.png'
+import Lu from '../../../public/Lu.png'
+import Gigi from '../../../public/Gi.png'
+import Gaby from '../../../public/Gaby.png'
+
+
 const team = [
   {
-      avatar: "https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+      avatar: Gaby,
       name: "Gabrielly Barbosa Camilo",
       title: "(Marketing/ Finanças)",
   },
   {
-      avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+      avatar: Gigi,
       name: "Giovanna Luiza Bento",
       title: "(Front-end)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/women/79.jpg",
+      avatar: Isa,
       name: "Isabella Hikari Chinen",
       title: "(Designer)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+      avatar: Lu,
       name: "Luana Gomes da Silva",
       title: "(Back-End)",
   },
   {
-      avatar: "https://randomuser.me/api/portraits/men/86.jpg",
+      avatar: Mari,
       name: "Mariana Ayumi Kitsuse",
       title: "(Design/Marketing)",
   }

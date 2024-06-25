@@ -5,6 +5,7 @@ import card4 from '../../../public/card4.svg'
 import card5 from '../../../public/card5.svg'
 import card6 from '../../../public/card6.svg'
 import card7 from '../../../public/card7.svg'
+import card8 from '../../../public/card8.svg'
 
 const servicos = [
     {
@@ -69,6 +70,15 @@ const servicos = [
     imageAlt: "logoCard7",
     color: 'bg-card7',
     text: 'Reparo elétrico geral: Serviço para reparar ou substituir componentes elétricos defeituosos, como sistemas de iluminação, partida e carregamento da bateria, garantindo o bom funcionamento dos sistemas elétricos do veículo.'
+},
+{
+    id: 8,
+    name: 'Serviços Especificos',
+    href: '#',
+    imageSrc: card8,
+    imageAlt: "logoCard8",
+    color: 'bg-card8',
+    text: 'Caso o serviço automotivo desejado não se encontre nas opções anteriores clique aqui, para realizar um orçamento com um profissional perfeito para o que você precisa.'
 }
 
 ]

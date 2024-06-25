@@ -77,7 +77,7 @@ const products = [
             rating: "5.0",
             reviews:"102 avaliações",
             location: "Japão",
-            description: "Moletom capa para câmbio com várias cores"
+            description: "Moletom para câmbio com várias cores"
           },
           {
               id: 7,
