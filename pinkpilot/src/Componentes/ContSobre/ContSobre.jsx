@@ -35,7 +35,7 @@ function ContSobre(){
     <div className="flex items-center justify-center px-5 ">
       <div className="max-w-7xl w-full flex items-center">
         {/* Contêiner para o texto */}
-        <div className="flex-1 text-center">
+        <div className="flex-1 text-center ">
           <h2 className="text-4xl font-bold text-margentinha mb-4">Nossa missão</h2>
           <p className="text-gray-700 text-2xl">
             Oferecer confiança e segurança para as mulheres quando precisarem de serviços automotivos.
@@ -76,19 +76,23 @@ function ContSobre(){
     </div>
   </div>
 
-  <section class="pb-12 bg-gray-50 text-center">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center flex-col lg:flex-row  ">
-            <div class="w-full lg:w-1/2 text-center lg:text-left">
-                <h2 class="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7">
+  <section className="pb-12 text-center">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center flex-col lg:flex-row  ">
+            <div className="w-full lg:w-1/2 text-center lg:text-left pr-6">
+                <h2 className="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7">
                     Conheça nossa equipe criativa
                 </h2>
-                <p class="text-lg text-gray-500 mb-16">
-                    
+                <h3 className="font-manrope flex text-2xl underline text-margentinha font-bold mb-7">
+                    Sócias 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 ml-2 mt-1">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </h3>
+                <p className="text-lg text-gray-500 mb-16">                
                   Dictumst vitae habitant consequat vestibulum a nisi at. Id at sit felis ipsum id facilisis vitae vitae vel. Adipiscing aliquet mauris quisque et quis urna molestie gravida tortor. Gravida pellentesque purus placerat enim tincidunt sagittis aliquet. Ut vulputate vestibulum et ipsum. Interdum pellentesque pellentesque vitae accumsan amet.
-
                 </p>
-                <button class="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0">
+                <button className="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0">
                     Nos siga nas redes sociais
                 </button>
             </div>

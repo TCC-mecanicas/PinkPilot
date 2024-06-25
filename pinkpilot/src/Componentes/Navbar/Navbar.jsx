@@ -22,7 +22,7 @@ function Navbar() {
         <ul className="flex justify-center gap-4">
           <li className="hover:text-margentinha self-center"><Link to="/">Mecânicas</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/comunidade">Comunidade</Link></li>
-          <li className="hover:text-margentinha self-center"><Link to="/sobre">Sobre</Link></li>
+          <li className="hover:text-margentinha self-center"><Link to="/sobre">Sobre Nós</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/loja">Loja</Link></li>
           <li className="hover:text-margentinha self-center" ><Link to="/pinkchat">PinkChat</Link></li>
           <Link to="/pinkchat"><img src="/Pinkie.svg" alt="Pinkie" className='h-8 w-8' /></Link>
@@ -33,7 +33,7 @@ function Navbar() {
         <Avatar
           size="base "
           alt="avatar"
-          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          src="avatar.jpg"
           className="ring-4 ring-margentinha"
         />
       </div>

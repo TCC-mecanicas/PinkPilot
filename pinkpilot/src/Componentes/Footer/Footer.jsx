@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 function Footer(){
     return(
     <footer className="w-full p-8 bg-margentinha text-white">
@@ -13,27 +14,33 @@ function Footer(){
                 </a>  
             </li>
             <li>   
-                <a href="#"
+                <a
                 className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                Privacidade
+                <li className="hover:text-rosinha self-center" ><Link to="/">Mecânicas</Link></li> 
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a 
                 className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                Termos
+                <li className="hover:text-rosinha self-center" ><Link to="/comunidade">Comunidade</Link></li> 
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a 
                 className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                Mapa do Site
+                <li className="hover:text-rosinha self-center" ><Link to="/sobre">Sobre Nós</Link></li> 
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a 
                 className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                Informações da empresa
+                <li className="hover:text-rosinha self-center" ><Link to="/loja">Loja</Link></li> 
+                </a>
+            </li>
+            <li>
+                <a 
+                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
+                <li className="hover:text-rosinha self-center" ><Link to="/pinkchat">PinkChat</Link></li> 
                 </a>
             </li>
             </ul>

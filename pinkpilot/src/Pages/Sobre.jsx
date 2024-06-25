@@ -1,5 +1,5 @@
 import Pesq from "../Componentes/Pesq/Pesq";
-import ContSobre from "../Componentes/contSobre/ContSobre";
+import ContSobre from "../Componentes/ContSobre/ContSobre";
 
 function Sobre() {
     return ( 
