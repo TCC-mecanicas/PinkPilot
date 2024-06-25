@@ -1,3 +1,5 @@
+import estrelas from "../../../public/estrelas.svg"
+
 const mecanicas = [
   {
     name: 'Jacar Pneus',
@@ -56,7 +58,7 @@ function Parceiras() {
                 <span className="text-2xl pt-2 font-bold ml-1">{mechanic.rating}</span> 
             </div>
             <div className="flex justify-center">
-                <img className="" src="../../../public/estrelas.svg"></img>
+                <img className="" src={estrelas}></img>
                 <p className="text-gray-600 mt-2 ml-2">{mechanic.reviews}</p>
             </div>
             

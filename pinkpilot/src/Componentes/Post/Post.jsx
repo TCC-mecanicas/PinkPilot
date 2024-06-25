@@ -1,9 +1,12 @@
 import seta from '../../../public/setaa.svg';
 
+import avatar1 from '../../../public/avatar1.jpg';
+import avatar2 from '../../../public/avatar2.jpg';
+
 const data = [
     {
         name: 'Ana Schwarzschild',
-        profilePic: 'https://via.placeholder.com/150',
+        profilePic: avatar1,
         thumbnail: 'tumb.svg',
         comments: [
             { name: 'Lavinia la Monique', text: 'Tive um problema parecido com o meu carro e consegui resolver.', avatar: 'https://via.placeholder.com/40' },
@@ -13,8 +16,8 @@ const data = [
         ]
     },
     {
-        name: 'Ana Schwarzschild',
-        profilePic: 'https://via.placeholder.com/150',
+        name: 'Carmem Aparecida',
+        profilePic: avatar2,
         thumbnail: 'tumb.svg',
         comments: [
             { name: 'Lavinia la Monique', text: 'Tive um problema parecido com o meu carro e consegui resolver.', avatar: 'https://via.placeholder.com/40' },
@@ -29,7 +32,7 @@ function Post() {
     return (
         <div className="p-4 rounded-lg m-10 max-w-5xl mx-auto">
             {data.map((post, index) => (
-                <div key={index} className="mb-8 bg-post rounded-lg shadow-lg p-6"> {/* Adicionado mb-8 e estilos para o card */}
+                <div key={index} className="mb-6 bg-post rounded-lg p-6"> {/* Adicionado mb-8 e estilos para o card */}
                     <div className="flex items-center mb-5">
                         <img
                             className="w-12 h-12 rounded-full mr-4"
