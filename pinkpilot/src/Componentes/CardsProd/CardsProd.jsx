@@ -7,7 +7,7 @@ const products = [
       href: '#',
       imageSrc: 'prod1.png',
       imageAlt: "Front of men's Basic Tee in black.",
-      price: '$20',
+      price: 'R$20',
       color: 'Black',
       rating: "5.0",
       reviews:"102 avaliações",
@@ -38,7 +38,7 @@ const products = [
         rating: "5.0",
         reviews: "56 avaliações",
         location: "Japão",
-        description: "Aplique de stress para freio de mão"
+        description: "Aplique de strass para freio de mão"
       },
       {
           id: 4,
@@ -72,7 +72,7 @@ const products = [
             href: '#',
             imageSrc: 'prod6.png',
             imageAlt: "Front of men's Basic Tee in black.",
-            price: '$20',
+            price: 'R$20',
             color: 'Black',
             rating: "5.0",
             reviews:"102 avaliações",
@@ -195,7 +195,7 @@ function CardsProd() {
                         </svg>
                         <Typography className="text-sm text-gray-700">{products.rating } · {products.reviews} </Typography>
                         </div>
-                        <Typography variant="h6" className="mt-2 font-semibold text-gray-900">
+                        <Typography variant="h6" className="mt-2 text-sm text-gray-700">
                         {products.description}
                         </Typography>
                         <Typography variant="body2" className="mt-2 font-bold text-gray-800">

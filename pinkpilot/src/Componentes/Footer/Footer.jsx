@@ -1,51 +1,67 @@
 import {Link} from 'react-router-dom'
+import { useLocation } from "react-router-dom";
+import { FaWhatsapp, FaEnvelope, FaInstagram, FaTiktok, FaPhone } from 'react-icons/fa';
+
 function Footer(){
+    const location = useLocation();
+
+    if (location.pathname === "/pinkchat") return null;
+
     return(
-    <footer className="w-full p-8 bg-margentinha text-white">
-        <span className="block my-8 border-t border-blue-gray-50" />
-        <div
-            className="flex flex-row flex-wrap items-center justify-center text-center gap-y-6 gap-x-12 md:justify-between">
-            
-            <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-            <li>
-                <a href="#"
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                © 2024 PinkPilot 
-                </a>  
-            </li>
-            <li>   
-                <a
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                <li className="hover:text-rosinha self-center" ><Link to="/">Mecânicas</Link></li> 
-                </a>
-            </li>
-            <li>
-                <a 
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                <li className="hover:text-rosinha self-center" ><Link to="/comunidade">Comunidade</Link></li> 
-                </a>
-            </li>
-            <li>
-                <a 
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                <li className="hover:text-rosinha self-center" ><Link to="/sobre">Sobre Nós</Link></li> 
-                </a>
-            </li>
-            <li>
-                <a 
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                <li className="hover:text-rosinha self-center" ><Link to="/loja">Loja</Link></li> 
-                </a>
-            </li>
-            <li>
-                <a 
-                className="block font-sans text-base antialiased font-normal leading-relaxed transition-colors ">
-                <li className="hover:text-rosinha self-center" ><Link to="/pinkchat">PinkChat</Link></li> 
-                </a>
-            </li>
+        <footer className="bg-margentinha text-white py-10">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between">
+          <div>
+            <h3 className="font-bold mb-2">Contato:</h3>
+            <ul>
+              <li className="flex items-center mb-2">
+                <FaWhatsapp className="w-5 h-5 mr-2" />
+                +55 11 9958-4752
+              </li>
+              <li className="flex items-center mb-2">
+                <FaEnvelope className="w-5 h-5 mr-2" />
+                pinkpilot@gmail.com
+              </li>
+              <li className="flex items-center mb-2 ">
+                <FaPhone className="w-5 h-5 mr-2 transform rotate-90" />
+                +55 11 9958-4752
+              </li>
             </ul>
+          </div>
+          <div>
+            <h3 className="font-bold mb-2">Mídias:</h3>
+            <ul>
+              <li className="flex items-center mb-2">
+                <FaInstagram className="w-5 h-5 mr-2" />
+                @pink.pilot_
+              </li>
+              <li className="flex items-center mb-2">
+                <FaTiktok className="w-5 h-5 mr-2" />
+                @pink.pilot_
+              </li>
+            </ul>
+          </div>
         </div>
-    
+        <hr className="h-px m-2 border-0 bg-white p-0 mb-6"></hr>
+        <div className="flex justify-between mt-6 text-sm">
+          <div className="flex flex-wrap space-x-2">
+            <a href="#" className="hover:text-gray-300">© 2024 PinkPilot, Inc.</a>
+            <span>|</span>
+            <a href="#" className="hover:text-gray-300"><Link to="/">Mecânicas</Link></a>
+            <span>|</span>
+            <a href="#" className="hover:text-gray-300"><Link to="/comunidade">Comunidade</Link></a>
+            <span>|</span>
+            <a href="#" className="hover:text-gray-300"><Link to="/sobre">Sobre Nós</Link></a>
+            <span>|</span>
+            <a href="#" className="hover:text-gray-300"><Link to="/loja">Loja</Link></a>
+            <span>|</span>
+            <a href="#" className="hover:text-gray-300"><Link to="/pinkchat">PinkChat</Link></a>
+          </div>
+          <div>
+            <a href="#" className="">Português (BR)</a>
+          </div>
+        </div>
+      </div>
     </footer>
     )
 }

@@ -1,10 +1,8 @@
-import Pesq from "../Componentes/Pesq/Pesq";
-
 function PinkChat() {
     return ( 
         <>
+            <hr className="h-px m-2 border-0 bg-rosinha p-0 mb-6"></hr> 
         <body className="bg-gradient-to-t from-rosinha min-h-screen">
-             <Pesq/>
              <div className="flex flex-col min-h-screen">
                <div className="flex flex-grow justify-center items-center">
                <div className="flex items-center space-x-4">

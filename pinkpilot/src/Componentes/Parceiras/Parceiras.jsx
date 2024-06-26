@@ -10,28 +10,36 @@ const mecanicas = [
     imageUrl: 'jacar.svg',
   },
   {
-    name: 'Jacar Pneus',
+    name: 'ABC Pneus',
     type: 'Centro Automotivo',
-    location: 'Juiz de Fora - MG',
-    rating: 9.88,
-    reviews: 803,
-    imageUrl: 'jacar.svg',
+    location: 'Rio de Janeiro - RJ',
+    rating: 9.78,
+    reviews: 752,
+    imageUrl: 'ABC.svg',
   },
   {
-    name: 'Jacar Pneus',
+    name: 'VIP Pneus Centro Automotivo',
     type: 'Centro Automotivo',
-    location: 'Juiz de Fora - MG',
-    rating: 9.88,
-    reviews: 803,
-    imageUrl: 'jacar.svg',
+    location: 'Jussara - GO',
+    rating: 9.77,
+    reviews: 537,
+    imageUrl: 'VIP.svg',
   },
   {
-    name: 'Jacar Pneus',
+    name: 'Polidoro Pneus',
     type: 'Centro Automotivo',
-    location: 'Juiz de Fora - MG',
-    rating: 9.88,
-    reviews: 803,
-    imageUrl: 'jacar.svg',
+    location: 'Dracena - SP',
+    rating: 9.72,
+    reviews: 591,
+    imageUrl: 'Polidoro.svg',
+  },
+  {
+    name: 'Miscar Porto Seguro',
+    type: 'Centro Automotivo',
+    location: 'São Paulo - SP',
+    rating: 9.69,
+    reviews: 940,
+    imageUrl: 'Miscar.svg',
   }
 ];
 
@@ -58,7 +66,7 @@ function Parceiras() {
                 <span className="text-2xl pt-2 font-bold ml-1">{mechanic.rating}</span> 
             </div>
             <div className="flex justify-center">
-                <img className="" src={estrelas}></img>
+                <img className="h-5 mt-2" src={estrelas}></img>
                 <p className="text-gray-600 mt-2 ml-2">{mechanic.reviews}</p>
             </div>
             
