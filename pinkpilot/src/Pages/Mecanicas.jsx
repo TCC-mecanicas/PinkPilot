@@ -4,7 +4,6 @@ import CardServ from '../Componentes/CardServ/CardServ'
 import Parceiras from '../Componentes/Parceiras/Parceiras';
 
 
-
 function Mecanicas() {
     return ( 
         <div>

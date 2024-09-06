@@ -1,11 +1,10 @@
-import Pesq from "../Componentes/Pesq/Pesq";
 import ContSobre from "../Componentes/ContSobre/ContSobre";
 import Forms from "../Componentes/Forms/Forms";
 
 function Sobre() {
     return ( 
         <>
-         <Pesq/>
+        <hr className="h-px m-2 border-0 bg-rosinha p-0 mb-6"></hr> 
          <ContSobre/>
          <Forms/>
         </>
@@ -13,4 +12,3 @@ function Sobre() {
 }
 
 export default Sobre ;
-

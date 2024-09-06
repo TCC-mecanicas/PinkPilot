@@ -1,6 +1,7 @@
 import {Outlet} from 'react-router-dom'
 import Header from './Componentes/Header/Header'
 import Footer from './Componentes/Footer/Footer'
+import PinkIcon from './Componentes/PinkIcon/PinkIcons'
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <Header/>
     <Outlet/>
     <Footer/>
+    <PinkIcon/>
     </>
   )
 }

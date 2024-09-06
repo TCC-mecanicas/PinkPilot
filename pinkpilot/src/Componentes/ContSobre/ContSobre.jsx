@@ -99,7 +99,9 @@ function ContSobre(){
                 <p className="text-lg text-gray-500 mb-16">                
                   Dictumst vitae habitant consequat vestibulum a nisi at. Id at sit felis ipsum id facilisis vitae vitae vel. Adipiscing aliquet mauris quisque et quis urna molestie gravida tortor. Gravida pellentesque purus placerat enim tincidunt sagittis aliquet. Ut vulputate vestibulum et ipsum. Interdum pellentesque pellentesque vitae accumsan amet.
                 </p>
-                <button className="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0">
+                <button 
+                className="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0"
+                onClick={() => window.open("https://www.instagram.com/pink.pilot_?igsh=MW05Zzd4YThsaHJwbg==", "_blank")}>
                     Nos siga nas redes sociais
                 </button>
             </div>
