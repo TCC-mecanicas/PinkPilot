@@ -21,10 +21,6 @@ function Navbar() {
         {/* Navegação centralizada */}
         <ul className="flex justify-center gap-4">
           <li className="hover:text-margentinha self-center"><Link to="/">Mecânicas</Link></li>
-          
-          <li className="hover:text-margentinha self-center" ><Link to="/pinkchat">PinkChat</Link></li>
-          <Link to="/pinkchat"><img src="/Pinkie.svg" alt="Pinkie" className='h-8 w-8' /></Link>
-          
           <li className="hover:text-margentinha self-center"><Link to="/comunidade">Comunidade</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/loja">Loja</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/sobre">Sobre Nós</Link></li>

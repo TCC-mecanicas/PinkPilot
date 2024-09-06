@@ -1,9 +1,18 @@
 import {Link} from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
 function PinkIcon() {
+    const location = useLocation();
+
+    if (location.pathname === "/pinkchat") return null;
+
     return(
         <>
-            <Link to="/pinkchat"><img src="/Pinkie.svg" alt="Pinkie" className='h-22 w-32' /></Link>
+            <div className="fixed bottom-6 right-6 p-2 bg-white rounded-full border-2 border-margentinha">
+                <Link to="/pinkchat">
+                    <img src="/Pinkie.svg" alt="Pinkie" className='h-16 w-16' />
+                </Link>
+            </div>       
         </>
     )
 }
