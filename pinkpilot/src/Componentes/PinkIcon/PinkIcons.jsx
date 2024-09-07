@@ -5,6 +5,8 @@ function PinkIcon() {
     const location = useLocation();
 
     if (location.pathname === "/pinkchat") return null;
+    if (location.pathname === "/login") return null;
+    if (location.pathname === "/cadastro") return null;
 
     return(
         <>

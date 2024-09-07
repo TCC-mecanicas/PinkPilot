@@ -57,7 +57,7 @@ function PinkChat() {
                             <img src="/Pinkie.svg" className="w-[150px] h-[100px] rounded-full" alt="Avatar" />
                             <div className="relative mb-2 bg-white p-7 rounded-lg shadow-md">
                                 <p className="text-margentinha text-center">
-                                    <ChatHistory chatHistory={chatHistory} />
+                                    <ChatHistory chatHistory={chatHistory}/>
                                     <Loading isLoading={isLoading} />
                                 </p>
                                 <div className="absolute bottom-0 left-0 transform translate-x-2 translate-y-2 w-0 h-0 border-l-8 border-l-transparent border-t-8 border-t-white border-r-8 border-r-transparent"></div>
@@ -81,7 +81,7 @@ function PinkChat() {
                         </button>
                     </div>
                     <button
-                        className="mb-4 ml-4 w-60 mt-2 px-2 py-2 rounded-lg bg-margentinha text-white hover:bg-white hover:text-black"
+                        className="mb-4 ml-4 w-60 px-2 py-2 rounded-lg bg-margentinha text-white hover:bg-white hover:text-black"
                         onClick={clearChat}
                     >
                         Limpar conversa

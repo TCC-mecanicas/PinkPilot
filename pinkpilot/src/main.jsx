@@ -9,6 +9,7 @@ import Comunidade from './Pages/Comunidade.jsx'
 import Mecanicas from './Pages/Mecanicas.jsx'
 import PinkChat from './Pages/PinkChat.jsx'
 import Login from './Pages/Login.jsx'
+import Cadastro from './Pages/Cadastro.jsx'
 
 const router = createBrowserRouter(
   [
@@ -21,7 +22,8 @@ const router = createBrowserRouter(
         {path: "sobre", element: <Sobre/>},
         {path: "comunidade", element:<Comunidade/>},
         {path: "pinkchat", element: <PinkChat/>},
-        {path: "login", element: <Login/> }
+        {path: "login", element: <Login/> },
+        {path: "cadastro", element: <Cadastro/>}
 
       ]
     }

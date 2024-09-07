@@ -27,14 +27,18 @@ function Navbar() {
         </ul>
       </div>
       {/* Avatar alinhado à direita */}
+      
       <div className="absolute right-4 p-4 ">
-        <Avatar
-          size="base "
-          alt="avatar"
-          src="avatar.jpg"
-          className="ring-4 ring-margentinha"
-        />
+        <Link to="/login">
+          <Avatar
+            size="base "
+            alt="avatar"
+            src="avatar.jpg"
+            className="ring-4 ring-margentinha"
+          />
+        </Link>
       </div>
+     
     </nav>
      );
 }

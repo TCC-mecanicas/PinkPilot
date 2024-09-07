@@ -8,14 +8,14 @@ const ChatHistory = ({ chatHistory }) => {
         <div
 
           key={index}
-          className={`flex items-start py-2 px-4 rounded-lg ${
+          className={`flex items-start mb-2 py-2 px-4 rounded-lg ${
             message.type === "user"
               ? "bg-gray-100 text-gray-800"
               : "bg-rosinha text-black"
           }`}
         >
           {message.type === "user" && (
-            <span className="align-left mr-2 font-bold text-margentinha">Você:</span>
+            <span className="align-left mr-2 font-bold text-margentinha" >Você:</span>
           )}
 
           <div>
