@@ -1,25 +1,26 @@
 import { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../Services/firebaseConfig";
-import { Link } from "react-router-dom";
 
 import logoImg from "../../public/logo.svg";
 import arrowImg from "../../public/arrow.svg";
-
+import { Link, useNavigate } from "react-router-dom";
 
 function Cadastro() {
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [createUserWithEmailAndPassword, loading] = useCreateUserWithEmailAndPassword(auth);
-    
+    const [createUserWithEmailAndPassword, loading, user] = useCreateUserWithEmailAndPassword(auth);
+
     const [errors, setErrors] = useState({
         email: '',
         confirmEmail: '',
         password: '',
         confirmPassword: ''
     });
+
+    const navigate = useNavigate(); 
 
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -53,9 +54,14 @@ function Cadastro() {
             return;
         }
 
-        createUserWithEmailAndPassword(email, password).catch((error) => {
-            console.log('Erro ao cadastrar:', error.message);
-        });
+        createUserWithEmailAndPassword(email, password)
+            .then(() => {
+   
+                navigate('/');
+            })
+            .catch((error) => {
+                console.log('Erro ao cadastrar:', error.message);
+            });
     }
 
     if (loading) {

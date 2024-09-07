@@ -1,7 +1,7 @@
 import logoImg from "../../public/logo.svg";
 import arrowImg from "../../public/arrow.svg";
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // , useNavigate
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../Services/firebaseConfig";
@@ -12,7 +12,8 @@ function Login() {
     const [signInWithEmailAndPassword, user, loading] = useSignInWithEmailAndPassword(auth);
     const [errorMessage, setErrorMessage] = useState("");
 
-    // Função de validação de email usando regex
+    //const navigate = useNavigate(); 
+    
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -31,7 +32,11 @@ function Login() {
             return;
         }
 
-        signInWithEmailAndPassword(email, password).catch((error) => {
+        signInWithEmailAndPassword(email, password)
+        //.then(() => {
+        //   navigate('/');
+        //})
+        .catch((error) => {
             setErrorMessage("Erro ao fazer login. Verifique suas credenciais.");
         });
     };
