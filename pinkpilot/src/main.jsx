@@ -10,21 +10,22 @@ import Mecanicas from './Pages/Mecanicas.jsx'
 import PinkChat from './Pages/PinkChat.jsx'
 import Login from './Pages/Login.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
+import PageProdutos from './Pages/PageProdutos.jsx' // Importe a página de detalhes do produto
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <App/>,
+      element: <App />,
       children: [
-        {index: true, element: <Mecanicas/>},
-        {path: "loja", element: <Loja/> },
-        {path: "sobre", element: <Sobre/>},
-        {path: "comunidade", element:<Comunidade/>},
-        {path: "pinkchat", element: <PinkChat/>},
-        {path: "login", element: <Login/> },
-        {path: "cadastro", element: <Cadastro/>}
-
+        { index: true, element: <Mecanicas /> },
+        { path: "loja", element: <Loja /> },
+        { path: "sobre", element: <Sobre /> },
+        { path: "comunidade", element: <Comunidade /> },
+        { path: "pinkchat", element: <PinkChat /> },
+        { path: "login", element: <Login /> },
+        { path: "cadastro", element: <Cadastro /> },
+        { path: "produto/:id", element: <PageProdutos /> } // Adicione a rota para detalhes do produto
       ]
     }
   ]

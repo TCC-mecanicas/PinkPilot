@@ -110,7 +110,7 @@ function ContSobre(){
                         {
                             team.map((item, idx) => (
                                 <li key={idx}>
-                                    <div className="w-30 h-30 mx-auto">
+                                    <div className=" mx-auto">
                                         <img
                                             src={item.avatar}
                                             className="w-full h-full rounded-full"

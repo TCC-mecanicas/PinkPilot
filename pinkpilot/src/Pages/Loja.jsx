@@ -4,7 +4,6 @@ import Pesq from "../Componentes/Pesq/Pesq";
 function Loja() {
     return ( 
         <>
-    
         <Pesq/>
         <CardsProd/>
         </>

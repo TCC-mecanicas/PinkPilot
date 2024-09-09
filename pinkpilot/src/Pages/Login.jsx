@@ -1,19 +1,19 @@
 import logoImg from "../../public/logo.svg";
 import arrowImg from "../../public/arrow.svg";
-
-import { Link } from "react-router-dom"; // , useNavigate
-import { useState } from "react";
+   
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../Services/firebaseConfig";
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [signInWithEmailAndPassword, user, loading] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate(); 
 
-    //const navigate = useNavigate(); 
-    
+
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -21,7 +21,7 @@ function Login() {
 
     const handleSignIn = (e) => {
         e.preventDefault();
-        
+
         if (!email || !password) {
             setErrorMessage("Por favor, preencha todos os campos.");
             return;
@@ -32,22 +32,20 @@ function Login() {
             return;
         }
 
-        signInWithEmailAndPassword(email, password)
-        //.then(() => {
-        //   navigate('/');
-        //})
-        .catch((error) => {
-            setErrorMessage("Erro ao fazer login. Verifique suas credenciais.");
-        });
+        signInWithEmailAndPassword(email, password);
     };
 
-    if (loading) {
-        return <p>Carregando...</p>;
-    }
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user, navigate]);
 
-    if (user) {
-        return console.log(user);
-    }
+    useEffect(() => {
+        if (error) {
+            setErrorMessage("Verifique o seu email ou a sua senha.");
+        }
+    }, [error]);
 
     return (
         <>
@@ -65,8 +63,8 @@ function Login() {
                                 type="text"
                                 name="email"
                                 id="email"
-                                placeholder="Seu e-mail"
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha"
+                                placeholder="Seu email"
+                                className={`mt-1 block w-full px-3 py-2 border ${errorMessage ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
@@ -78,7 +76,7 @@ function Login() {
                                 name="password"
                                 id="password"
                                 placeholder="Sua senha"
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha"
+                                className={`mt-1 block w-full px-3 py-2 border ${errorMessage ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
@@ -87,10 +85,13 @@ function Login() {
                             <p className="text-red-500 text-sm mb-4 text-center">{errorMessage}</p>
                         )}
 
+                        <div className="mb-2 text-center">
+                            <p className="text-sm text-gray-600">Esqueceu sua senha?</p>
+                        </div>
+
                         <button
                             type="submit"
-                            className={`w-full py-3 font-semibold rounded-lg flex items-center justify-center transition duration-300 ${(!email || !password || !validateEmail(email)) ? 'bg-margentinha hover:bg-rosinha text-white cursor-not-allowed' : 'bg-margentinha text-white hover:bg-rosinha'}`}
-                            disabled={!email || !password || !validateEmail(email)}
+                            className="w-full py-3 font-semibold rounded-lg flex items-center justify-center transition duration-300  bg-margentinha text-white hover:bg-rosinha"                     
                         >
                             Entrar
                             <img src={arrowImg} alt="->" className="ml-2" />
