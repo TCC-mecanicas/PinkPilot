@@ -26,7 +26,7 @@ function UserMenu(){
           />
       </MenuHandler>
       <MenuList>
-        <Link to="/"><MenuItem>Perfil</MenuItem></Link>
+        <Link to="/perfil"><MenuItem>Perfil</MenuItem></Link>
         <Link to="/login"><MenuItem>Login</MenuItem></Link>
         <Link to="/cadastro"><MenuItem>Cadastrar</MenuItem></Link>
         

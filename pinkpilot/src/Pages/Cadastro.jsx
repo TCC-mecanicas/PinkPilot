@@ -3,7 +3,6 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../Services/firebaseConfig";
 
 import logoImg from "../../public/logo.svg";
-import arrowImg from "../../public/arrow.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function Cadastro() {
@@ -20,7 +19,7 @@ function Cadastro() {
         confirmPassword: ''
     });
 
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -29,7 +28,7 @@ function Cadastro() {
 
     function handleSignOut(e) {
         e.preventDefault();
-        
+
         const newErrors = { email: '', confirmEmail: '', password: '', confirmPassword: '' };
 
         if (!validateEmail(email)) {
@@ -56,7 +55,6 @@ function Cadastro() {
 
         createUserWithEmailAndPassword(email, password)
             .then(() => {
-   
                 navigate('/');
             })
             .catch((error) => {
@@ -69,95 +67,83 @@ function Cadastro() {
     }
 
     return (
-        <>
-            <div className="container flex items-center justify-center min-h-screen">
-                <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-                    <header className="text-center mb-8">
-                        <img src={logoImg} alt="Workflow" className="w-30 mx-auto mb-4" />
-                        <span className="text-lg font-semibold text-gray-700">
-                            Por favor, digite suas informações de cadastro
-                        </span>
-                    </header>
+        <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+            <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+                <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+                    <div className="text-center mb-8">
+                        <img src={logoImg} alt="Workflow" className="w-32 mx-auto" />
+                    </div>
+                    <div className="mt-12 flex flex-col items-center">
+                        <h1 className="text-2xl xl:text-3xl font-extrabold text-margentinha">Cadastre-se</h1>
 
-                    <form onSubmit={handleSignOut}>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                E-mail
-                            </label>
-                            <input
-                                type="text"
-                                name="email"
-                                id="email"
-                                placeholder="Seu e-mail"
-                                className={`mt-1 block w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                        </div>
+                        <form onSubmit={handleSignOut} className="w-full flex-1 mt-8">
+                            <div className="mx-auto max-w-xs">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="Seu e-mail"
+                                    className={`w-full px-8 py-4 rounded-lg bg-gray-100 border ${errors.email ? 'border-red-500' : 'border-gray-200'} placeholder:text-margentinha  text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
 
-                        <div className="mb-4">
-                            <label htmlFor="confirmEmail" className="block text-sm font-medium text-gray-700">
-                                Confirme seu E-mail
-                            </label>
-                            <input
-                                type="text"
-                                name="confirmEmail"
-                                id="confirmEmail"
-                                placeholder="Confirme seu e-mail"
-                                className={`mt-1 block w-full px-3 py-2 border ${errors.confirmEmail ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setConfirmEmail(e.target.value)}
-                            />
-                            {errors.confirmEmail && <p className="text-red-500 text-sm mt-1">{errors.confirmEmail}</p>}
-                        </div>
+                                <input
+                                    type="text"
+                                    name="confirmEmail"
+                                    placeholder="Confirme seu e-mail"
+                                    className={`w-full px-8 py-4 rounded-lg bg-gray-100 border ${errors.confirmEmail ? 'border-red-500' : 'border-gray-200'} placeholder:text-margentinha  text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+                                    onChange={(e) => setConfirmEmail(e.target.value)}
+                                />
+                                {errors.confirmEmail && <p className="text-red-500 text-sm mt-1">{errors.confirmEmail}</p>}
 
-                        <div className="mb-4">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                                Senha
-                            </label>
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="Sua senha"
-                                className={`mt-1 block w-full px-3 py-2 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
-                        </div>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Sua senha"
+                                    className={`w-full px-8 py-4 rounded-lg bg-gray-100 border ${errors.password ? 'border-red-500' : 'border-gray-200'} placeholder:text-margentinha  text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
 
-                        <div className="mb-6">
-                            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                                Confirme sua Senha
-                            </label>
-                            <input
-                                type="password"
-                                name="confirmPassword"
-                                id="confirmPassword"
-                                placeholder="Confirme sua senha"
-                                className={`mt-1 block w-full px-3 py-2 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                            />
-                            {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
-                        </div>
+                                <input
+                                    type="password"
+                                    name="confirmPassword"
+                                    placeholder="Confirme sua senha"
+                                    className={`w-full px-8 py-4 rounded-lg bg-gray-100 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-200'} placeholder:text-margentinha text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
+                                {errors.confirmPassword && <p className="text-red-500 text-sm mt-1">{errors.confirmPassword}</p>}
 
-                        <button
-                            type="submit"
-                            className="w-full py-3 bg-margentinha text-white font-semibold rounded-lg flex items-center justify-center hover:bg-rosinha transition duration-300"
-                        >
-                            Cadastrar
-                            <img src={arrowImg} alt="->" className="ml-2" />
-                        </button>
+                                <button
+                                    type="submit"
+                                    className="mt-5 tracking-wide font-semibold bg-margentinha text-gray-100 w-full py-4 rounded-lg hover:bg-rosinha transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                                >
+                                    <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" strokeWidth="2"
+                                        strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                        <circle cx="8.5" cy="7" r="4" />
+                                        <path d="M20 8v6M23 11h-6" />
+                                    </svg>
+                                    <span className="ml-3 ">Cadastrar</span>
+                                </button>
+                            </div>
+                        </form>
 
-                        <div className="mt-4 text-center">
-                            <p className="text-sm text-gray-600">Você já tem uma conta?</p>
+                        <p className="mt-6 text-xs text-gray-600 text-center">
+                            Já tem uma conta?{' '}
                             <Link to="/login" className="text-margentinha hover:underline">
                                 Acesse sua conta aqui
                             </Link>
-                        </div>
-                    </form>
+                        </p>
+                    </div>
+                </div>
+                <div className="flex-1 bg-rosinha text-center hidden lg:flex">
+                    <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+                        style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

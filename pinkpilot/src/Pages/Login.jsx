@@ -1,6 +1,6 @@
 import logoImg from "../../public/logo.svg";
 import arrowImg from "../../public/arrow.svg";
-   
+
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -12,7 +12,6 @@ function Login() {
     const [signInWithEmailAndPassword, user, error] = useSignInWithEmailAndPassword(auth);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate(); 
-
 
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,63 +47,58 @@ function Login() {
     }, [error]);
 
     return (
-        <>
-            <div className="container flex items-center justify-center min-h-screen">
-                <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-                    <header className="text-center mb-8">
-                        <img src={logoImg} alt="Workflow" className="w-30 mx-auto mb-4" />
-                        <span className="text-lg font-semibold text-gray-700">Bem Vinda(o) de volta!</span>
-                    </header>
+        <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+            <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+                <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+                    <div>
+                        <img src={logoImg} alt="Workflow" className="w-32 mx-auto mb-4" />
+                    </div>
+                    <div className="mt-12 flex flex-col items-center">
+                        <h1 className="text-2xl xl:text-3xl font-extrabold text-margentinha">Olá, bem-vinda!</h1>
+                        <div className="w-full flex-1 mt-8">
+                            <form onSubmit={handleSignIn} className="mx-auto max-w-xs">
+                                <input
+                                    className={`w-full px-8  placeholder:text-margentinha py-4 rounded-lg font-medium bg-gray-100 border ${errorMessage ? 'border-red-500' : 'border-gray-200'} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white`}
+                                    type="email"
+                                    placeholder="Email"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <input
+                                    className={`w-full px-8 py-4 placeholder:text-margentinha rounded-lg font-medium bg-gray-100 border ${errorMessage ? 'border-red-500' : 'border-gray-200'} placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5`}
+                                    type="password"
+                                    placeholder="Senha"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                {errorMessage && (
+                                    <p className="text-red-500 text-sm text-center mt-2">{errorMessage}</p>
+                                )}
+                                <button
+                                    type="submit"
+                                    className="mt-5 tracking-wide font-semibold bg-margentinha text-gray-100 w-full py-4 rounded-lg hover:bg-rosinha transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                                >
+                                    <img src={arrowImg} alt="->" className="w-6 h-6 -ml-2" />
+                                    <span className="ml-3">Entrar</span>
+                                </button>
+                                <div className="mt-6 text-xs text-gray-600 text-center">
+                                    <p>Esqueceu sua senha?</p>
+                                </div>
+                            </form>
 
-                    <form onSubmit={handleSignIn}>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail</label>
-                            <input
-                                type="text"
-                                name="email"
-                                id="email"
-                                placeholder="Seu email"
-                                className={`mt-1 block w-full px-3 py-2 border ${errorMessage ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
+                            <div className="mt-4 text-center">
+                                <p className="text-sm text-gray-600">Não tem uma conta?</p>
+                                <Link to="/cadastro" className="text-margentinha hover:underline">Crie sua conta aqui</Link>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div className="mb-6">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Senha</label>
-                            <input
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="Sua senha"
-                                className={`mt-1 block w-full px-3 py-2 border ${errorMessage ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-margentinha focus:border-margentinha`}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-
-                        {errorMessage && (
-                            <p className="text-red-500 text-sm mb-4 text-center">{errorMessage}</p>
-                        )}
-
-                        <div className="mb-2 text-center">
-                            <p className="text-sm text-gray-600">Esqueceu sua senha?</p>
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="w-full py-3 font-semibold rounded-lg flex items-center justify-center transition duration-300  bg-margentinha text-white hover:bg-rosinha"                     
-                        >
-                            Entrar
-                            <img src={arrowImg} alt="->" className="ml-2" />
-                        </button>
-
-                        <div className="mt-4 text-center">
-                            <p className="text-sm text-gray-600">Não tem uma conta?</p>
-                            <Link to="/cadastro" className="text-margentinha hover:underline">Crie sua conta aqui</Link>
-                        </div>
-                    </form>
+                <div className="flex-1 bg-rosinha text-center hidden lg:flex">
+                    <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
+                         style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}>
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
