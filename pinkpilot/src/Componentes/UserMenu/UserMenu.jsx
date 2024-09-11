@@ -22,6 +22,7 @@ function UserMenu(){
             size="md"
             alt="avatar"
             src="Icon.svg"
+            className="hover:margentinha"
           />
       </MenuHandler>
       <MenuList>
