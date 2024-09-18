@@ -74,7 +74,7 @@ function Forms(){
                                     placeholder="Mensagem"></textarea>
                                 </div>
 
-                                <button type="submit" value="Enviar" className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-margentinha rounded-md hover:bg-rosinha hover:text-black focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                <button type="submit" value="Enviar" className="w-full px-6 py-3 mt-4 text-sm font-semibold tracking-wide text-white capitalize duration-300 transform bg-margentinha rounded-md  hover:text-margentinha hover:bg-rosinha  transition-all focus:ring-opacity-50 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-[3px_3px_0px_#e9bdc0] ">
                                     Enviar
                                 </button>
                             </form>

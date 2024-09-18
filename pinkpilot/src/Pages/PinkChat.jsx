@@ -9,7 +9,7 @@ function PinkChat() {
     const [isLoading, setIsLoading] = useState(false);
 
     // API
-    const genAI = new GoogleGenerativeAI("AIzaSyB0xu5-zZ_mVV2h4PKyHQoDkgYmr5qk0uM");
+    const genAI = new GoogleGenerativeAI("AIzaSyDiEwNiFDJd4I2eKSMrNOtNuz4dhA8H3uM");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // Function to handle user input
@@ -73,24 +73,25 @@ function PinkChat() {
                             onChange={handleUserInput}
                         />
                         <button 
-                            className="right-0 top-0  mt-4 mr-4 absolute  text-white bg-margentinha hover:bg-rosinha hover:text-margentinha focus:outline-none font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            className="right-0 top-0  mt-4 mr-4 absolute  text-white bg-margentinha hover:bg-rosinha hover:text-margentinha focus:outline-none font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 "
                             onClick={sendMessage}
                             disabled={isLoading} //
                         >
                             <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-</svg>
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
                         </button>
                     </div>
                     <button
-                        className="mb-4 ml-4 w-60 px-2 py-2 rounded-lg bg-margentinha text-white hover:bg-white hover:text-black"
+                        className="mb-4 ml-4 w-60 shadow-[3px_3px_0px_#AA4367] px-2 py-2 rounded-lg hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] bg-margentinha text-white hover:bg-card6  hover:text-white hover:font-semibold transition-all duration-300 ease-in-out"
                         onClick={clearChat}
                     >
                         Limpar conversa
                     </button>
+                    
                 </div>
             </div>
-        </>
+     </>
     );
 }
 

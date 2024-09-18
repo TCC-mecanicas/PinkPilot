@@ -54,9 +54,10 @@ function Beneficios(){
       </ul>
     </div>
         <div className="flex justify-center items-center ">
-            <Link to="/sobre"><button className="mx-auto mb-8 cursor-pointer py-3 px-8 h-14 bg-margentinha text-white text-base font-semibold transition-all duration-500 rounded-2xl hover:bg-rosinha">
-                SAIBA MAIS
-            </button></Link>
+            <Link to="/sobre"> <button className="px-8 mx-auto cursor-pointer rounded-2xl py-3 h-14 font-semibold bg-margentinha text-base hover:text-margentinha text-white w-fit hover:bg-rosinha transition-all duration-300 shadow-[3px_3px_0px_#e9bdc0] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+        Saiba Mais!
+        </button>
+        </Link>
         </div>
       
         </>

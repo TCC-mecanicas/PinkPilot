@@ -100,11 +100,11 @@ function ContSobre(){
                   Dictumst vitae habitant consequat vestibulum a nisi at. Id at sit felis ipsum id facilisis vitae vitae vel. Adipiscing aliquet mauris quisque et quis urna molestie gravida tortor. Gravida pellentesque purus placerat enim tincidunt sagittis aliquet. Ut vulputate vestibulum et ipsum. Interdum pellentesque pellentesque vitae accumsan amet.
                 </p>
                 <button 
-                className="cursor-pointer py-3 px-8 w-60 bg-margentinha text-white text-base font-semibold transition-all duration-500 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0"
+                className="cursor-pointer py-3 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none px-8 w-60 bg-margentinha hover:text-margentinha text-white shadow-[3px_3px_0px_#e9bdc0] text-base font-semibold transition-all duration-300 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0"
                 onClick={() => window.open("https://www.instagram.com/pink.pilot_?igsh=MW05Zzd4YThsaHJwbg==", "_blank")}>
-                    Nos siga nas redes sociais
+                Nos siga nas redes sociais
                 </button>
-            </div>
+            </div>  
             <div className="mt-12">
                     <ul className="grid gap-8  md:grid-cols-4 lg:grid-cols-3">
                         {

@@ -20,8 +20,8 @@ function Navbar() {
   
       <div className="flex justify-center w-full">
       
-        <ul className="flex justify-center gap-4">
-          <li className="hover:text-margentinha self-center"><Link to="/">Mecânicas</Link></li>
+        <ul className="flex justify-center gap-8 text-preto font-semibold text-lg">
+          <li className="hover:text-margentinha self-center "><Link to="/">Mecânicas</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/comunidade">Comunidade</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/loja">Loja</Link></li>
           <li className="hover:text-margentinha self-center"><Link to="/sobre">Sobre Nós</Link></li>
