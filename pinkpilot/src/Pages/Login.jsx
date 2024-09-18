@@ -1,5 +1,6 @@
 import logoImg from "../../public/logo.svg";
 import arrowImg from "../../public/arrow.svg";
+import fundCadLog from "../../public/fundCadLog.png"
 
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -51,7 +52,7 @@ function Login() {
             <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                     <div>
-                        <img src={logoImg} alt="Workflow" className="w-32 mx-auto mb-4" />
+                        <img src={logoImg} alt="Workflow" className="w-64 mx-auto mb-4" />
                     </div>
                     <div className="mt-12 flex flex-col items-center">
                         <h1 className="text-2xl xl:text-3xl font-extrabold text-margentinha">Olá, bem-vinda!</h1>
@@ -91,11 +92,10 @@ function Login() {
                         </div>
                     </div>
                 </div>
-
-                <div className="flex-1 bg-rosinha text-center hidden lg:flex">
-                    <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-                         style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}>
-                    </div>
+                <div className="flex-1 bg-margentinha text-center hidden lg:flex">
+                    <img className="size-fit mt-14 bg-contain bg-center bg-no-repeat"
+                        src={fundCadLog}>
+                    </img>
                 </div>
             </div>
         </div>

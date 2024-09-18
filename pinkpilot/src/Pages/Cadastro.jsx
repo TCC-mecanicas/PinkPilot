@@ -4,7 +4,8 @@ import { auth } from "../Services/firebaseConfig";
 
 import logoImg from "../../public/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
-
+import fundCadLog from "../../public/fundCadLog.png"
+ 
 function Cadastro() {
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
@@ -71,7 +72,7 @@ function Cadastro() {
             <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
                 <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                     <div className="text-center mb-8">
-                        <img src={logoImg} alt="Workflow" className="w-32 mx-auto" />
+                        <img src={logoImg} alt="Workflow" className="w-64 mx-auto" />
                     </div>
                     <div className="mt-12 flex flex-col items-center">
                         <h1 className="text-2xl xl:text-3xl font-extrabold text-margentinha">Cadastre-se</h1>
@@ -137,10 +138,10 @@ function Cadastro() {
                         </p>
                     </div>
                 </div>
-                <div className="flex-1 bg-rosinha text-center hidden lg:flex">
-                    <div className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg')" }}>
-                    </div>
+                <div className="flex-1 bg-margentinha text-center hidden lg:flex">
+                    <img className="size-fit mt-14 bg-contain bg-center bg-no-repeat"
+                        src={fundCadLog}>
+                    </img>
                 </div>
             </div>
         </div>
