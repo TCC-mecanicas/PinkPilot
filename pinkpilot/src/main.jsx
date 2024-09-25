@@ -11,7 +11,7 @@ import PinkChat from './Pages/PinkChat.jsx'
 import Login from './Pages/Login.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
 import Perfil from './Pages/Perfil.jsx'
-import PageProdutos from './Pages/PageProdutos.jsx' // Importe a página de detalhes do produto
+import PageProdutos from './Pages/PageProdutos.jsx' 
 
 const router = createBrowserRouter(
   [
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
         { path: "login", element: <Login /> },
         { path: "cadastro", element: <Cadastro /> },
         { path: "perfil",element: <Perfil/>},
-        { path: "produto/:id", element: <PageProdutos /> } // Adicione a rota para detalhes do produto
+        { path: "produto/:id", element: <PageProdutos /> } 
       ]
     }
   ]
