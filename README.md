@@ -10,6 +10,7 @@ Tecnologias Utilizadas:
 - Gemini AI
 
 Comandos: 
+- cd pinkpilot
 - npm i 
 - npm run dev
 
