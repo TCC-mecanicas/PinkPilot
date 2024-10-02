@@ -100,7 +100,7 @@ function Parceiras() {
         <h1 className="text-2xl ml-10 font-bold" style={{ textDecoration: 'underline', textDecorationColor: '#951B4A' }}>
           Mecânicas parceiras
         </h1>
-        <section className="bg-gray-100">
+        <section>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
             {mecanicas.map((mecanica, index) => (
               <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300" key={index}>

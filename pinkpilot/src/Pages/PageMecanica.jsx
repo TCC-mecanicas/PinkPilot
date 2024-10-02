@@ -1,7 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { Button, TextField } from '@mui/material';
+
 import { styled } from '@mui/material/styles';
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
 
@@ -167,12 +170,73 @@ function PageMecanica() {
                 </div>
             </div>
 
-            <div className="mt-8">
-                <h1 className="text-2xl font-bold text-margentinha">Localização:</h1>
-                <p className="text-gray-600 mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-            </div>
+            <h1 className="text-2xl font-bold text-margentinha mt-4 mb-10">Localização:</h1>
+              <div className="flex justify-between items-center" style={{ height: '450px' }}>
+        
+              <div className="flex flex-col">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14627.487121081835!2d-46.62231039999999!3d-23.573048099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sbr!4v1727893456024!5m2!1spt-PT!2sbr"
+                  width="600"
+                  height="450"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-xl border-2 border-margentinha"
+                ></iframe>
+                <p className="mt-2">Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+              </div>
+
+              <div className="flex flex-col items-center justify-center space-y-6 w-full ml-8">
+        
+                <div className="border border-rosinha p-6 text-center w-full max-w-sm">
+                  <p className="text-xl font-bold text-margentinha">
+                    Conhece esta oficina? <br /> Deixe aqui a sua avaliação!!
+                  </p>
+                  <div className="flex items-center justify-center mt-4 space-x-2">
+                    <TextField
+                      variant="outlined"
+                      placeholder="Digite sua avaliação"
+                      size="small"
+                      className="w-48"
+                    />
+                    <Button
+                      variant="outlined"
+                      size="large"
+                      sx={{
+                        borderColor: '#951b4a', 
+                        color: '#951b4a', 
+                        '&:hover': {
+                          borderColor: '#951b4a',
+                          backgroundColor: 'rgba(149, 27, 74, 0.1)', 
+                        },
+                      }}
+                    >
+                      OK
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="border border-rosinha p-6 text-center w-full max-w-sm">
+                  <p className="text-xl font-bold text-margentinha mb-4">
+                    Se interessou? <br /> Entre em contato com a equipe!!
+                  </p>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    endIcon={<ForumRoundedIcon />}
+                    sx={{
+                      backgroundColor: '#951b4a', 
+                      color: '#fff', 
+                      '&:hover': {
+                        backgroundColor: '#7d173d',
+                      },
+                    }}
+                  >
+                    Iniciar conversa
+                  </Button>
+                </div>
+              </div>
+          </div>
         </div>
       </>
     );
