@@ -1,78 +1,128 @@
+import { Link } from "react-router-dom";
 import estrelas from "../../../public/estrelas.svg"
 
 const mecanicas = [
   {
+    id: 1,
     name: 'Jacar Pneus',
     type: 'Centro Automotivo',
     location: 'Juiz de Fora - MG',
     rating: 9.88,
     reviews: 803,
-    imageUrl: 'jacar.svg',
+    Banner: 'jacar.svg',
+    Logo: 'logoJacar.svg'
   },
   {
+    id: 2,
     name: 'ABC Pneus',
     type: 'Centro Automotivo',
     location: 'Rio de Janeiro - RJ',
     rating: 9.78,
     reviews: 752,
-    imageUrl: 'ABC.svg',
+    Banner: 'ABC.svg',
+    Logo: 'logoABC.svg'
   },
   {
-    name: 'VIP Pneus Centro Automotivo',
+    id: 3,
+    name: 'Impacto Prime',
     type: 'Centro Automotivo',
     location: 'Jussara - GO',
     rating: 9.77,
     reviews: 537,
-    imageUrl: 'VIP.svg',
+    Banner: 'Impacto.svg',
+    Logo: 'logoImpacto.svg'
   },
   {
-    name: 'Polidoro Pneus',
+    id: 4,
+    name: 'Stradale',
     type: 'Centro Automotivo',
-    location: 'Dracena - SP',
-    rating: 9.72,
-    reviews: 591,
-    imageUrl: 'Polidoro.svg',
+    location: 'São Paulo - SP',
+    rating: 9.71,
+    reviews: 940,
+    Banner: 'Stradale.svg',
+    Logo: 'logoStradale.svg'
   },
   {
-    name: 'Miscar Porto Seguro',
+    id: 5,
+    name: 'Oficcina',
+    type: 'Centro Automotivo',
+    location: 'São Paulo - SP',
+    rating: 9.96,
+    reviews: 940,
+    Banner: 'Oficcina.svg',
+    Logo: 'logoOficcina.svg'
+  },
+  {
+    id: 6,
+    name: 'High Torque Store',
     type: 'Centro Automotivo',
     location: 'São Paulo - SP',
     rating: 9.69,
     reviews: 940,
-    imageUrl: 'Miscar.svg',
+    Banner: 'Torque.svg',
+    Logo: 'logoTorque.svg'
+  },
+  {
+    id: 7,
+    name: 'Auto Force',
+    type: 'Centro Automotivo',
+    location: 'São Paulo - SP',
+    rating: 9.45,
+    reviews: 940,
+    Banner: 'AutoForce.svg',
+    Logo: 'logoAutoForce.svg'
+  },
+  {
+    id: 8,
+    name: 'Land Chardeli',
+    type: 'Centro Automotivo',
+    location: 'São Paulo - SP',
+    rating: 9.23,
+    reviews: 940,
+    Banner: 'Chardeli.svg',
+    Logo: 'logoChardeli.svg'
+  },
+  {
+    id: 9,
+    name: 'Miscar',
+    type: 'Centro Automotivo',
+    location: 'Dracena - SP',
+    rating: 9.72,
+    reviews: 591,
+    Banner: 'Miscar.svg',
+    Logo: 'logoMiscar.svg'
   }
 ];
 
 function Parceiras() {
   return (
-    <div className="max-w-6xl mx-auto mt-6 mb-6">
-      <h1 className="text-2xl font-bold mb-4 " style={{ textDecoration: 'underline', textDecorationColor: '#951B4A' }}>Mecânicas parceiras</h1>
-      {mecanicas.map((mechanic, index) => (
-        <div key={index} className="flex items-center border border-margentinha rounded-lg p-4 mb-4">
-          <div className="w-20 h-20 flex-shrink-0">
-            <img src={mechanic.imageUrl} alt={mechanic.name} className="w-full h-full object-cover rounded-lg" />
+    <div className="max-w-6xl mx-auto mt-12">
+        <h1 className="text-2xl ml-10 font-bold" style={{ textDecoration: 'underline', textDecorationColor: '#951B4A' }}>
+          Mecânicas parceiras
+        </h1>
+        <section className="bg-gray-100">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            {mecanicas.map((mecanica, index) => (
+              <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300" key={index}>
+                <Link to={`/mecanica/${mecanica.id}`}>
+                  <div className="relative flex items-end overflow-hidden rounded-xl">
+                    <img src={mecanica.Banner} alt={mecanica.name} />
+                  </div>
+                  <div className="flex">
+                  <img src={mecanica.Logo} alt={mecanica.name} className="w-16"/>
+                    <div className="ml-2 mt-1 p-2">
+                      <h2 className="text-slate-700">{mecanica.name}</h2> 
+                        <div className="flex">
+                          <img src={estrelas} alt="estrelas" className="w-8"/>
+                          <p className="text-l mt-1 ml-1 font-bold text-margentinha">{mecanica.rating}</p>
+                        </div>               
+                    </div>
+                  </div>
+                </Link>  
+              </article>
+            ))}
           </div>
-          <div className="flex-grow ml-4">
-            <h2 className="text-lg font-bold">{mechanic.name}</h2>
-            <p className="text-gray-600">{mechanic.type}</p>
-            <p className="text-gray-600">{mechanic.location}</p>
-          </div>
-          <div className=" text-margentinha ml-auto">
-            <div className="flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-10 h-10 text-margentinha" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    <path d="M0 0h24v24H0z" fill="none" />
-                </svg>
-                <span className="text-2xl pt-2 font-bold ml-1">{mechanic.rating}</span> 
-            </div>
-            <div className="flex justify-center">
-                <img className="h-5 mt-2" src={estrelas}></img>
-                <p className="text-gray-600 mt-2 ml-2">{mechanic.reviews}</p>
-            </div>
-            
-          </div>
-        </div>
-      ))}
+        </section>
     </div>
   );
 }

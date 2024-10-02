@@ -12,6 +12,8 @@ import Login from './Pages/Login.jsx'
 import Cadastro from './Pages/Cadastro.jsx'
 import Perfil from './Pages/Perfil.jsx'
 import PageProdutos from './Pages/PageProdutos.jsx' 
+import PageMecanica from './Pages/PageMecanica.jsx'
+
 
 const router = createBrowserRouter(
   [
@@ -27,7 +29,8 @@ const router = createBrowserRouter(
         { path: "login", element: <Login /> },
         { path: "cadastro", element: <Cadastro /> },
         { path: "perfil",element: <Perfil/>},
-        { path: "produto/:id", element: <PageProdutos /> } 
+        { path: "produto/:id", element: <PageProdutos /> },
+        { path: "mecanica/:id", element: <PageMecanica/>}
       ]
     }
   ]
