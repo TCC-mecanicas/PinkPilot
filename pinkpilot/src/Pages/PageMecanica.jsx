@@ -9,6 +9,8 @@ import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
 
 import Atendimentos from '../../public/atend.svg'
+import userMarcia from '../../public/avaliacaoMarcia.svg'
+import userClaudia from '../../public/avaliacaoClaudia.svg'
 
 const mecanicas = [
     {
@@ -106,6 +108,11 @@ const mecanicas = [
 function PageMecanica() {
     const { id } = useParams(); 
     const [mecanica, setMecanica] = useState(null);
+    const [text, setText] = useState('');
+
+    const handleButtonClick = () => {
+      setText(''); 
+    };
   
     useEffect(() => {
       const foundMecanica = mecanicas.find((mecanica) => mecanica.id === parseInt(id));
@@ -128,7 +135,7 @@ function PageMecanica() {
       });
     
     const StyledDivider = styled(Divider)({
-        borderColor: '#951b4a', // Define a cor da borda (cor da linha do Divider)
+        borderColor: '#951b4a',
     });
 
     return (
@@ -141,15 +148,15 @@ function PageMecanica() {
             </svg>
           </button>
   
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-            <div className="col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 ">
+            <div className="col-span-1 border-2 border-margentinha rounded-xl">
               <img src={`../../public/${mecanica.Banner}`} alt={mecanica.name} className="w-full h-96 object-cover rounded-lg shadow-lg" />
             </div>
   
             <div className="col-span-1">
-              <h1 className="text-3xl font-bold text-gray-800">{mecanica.name}</h1>
-              <h2 className="text-xl font-bold text-margentinha mt-2">Sobre nós:</h2>
-              <h3 className="text-lg text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor justo sit amet luctus mollis. Aenean blandit justo nec dolor pulvinar, a aliquam dui blandit. Integer luctus, massa a mattis scelerisque, dolor urna fermentum arcu, at accumsan libero est sed tellus. Nunc nec metus eleifend, tincidunt quam luctus, mollis leo. Vestibulum ut dui turpis. Ut non nulla feugiat, aliquam nulla nec, feugiat lectus. </h3>
+              <h1 className="text-3xl font-bold text-gray-800"> {mecanica.name}</h1>
+              <h2 className="text-xl font-bold text-margentinha mt-4">Sobre nós:</h2>
+              <h3 className="text-lg text-gray-600 mt-2">Na {mecanica.name}, somos apaixonados por cuidar de veículos e garantir que nossos clientes estejam sempre seguros nas estradas. Com anos de experiência no mercado, nossa equipe de especialistas oferece serviços de alta qualidade, desde manutenções preventivas até reparos complexos. Prezamos pela transparência e pelo atendimento personalizado, explicando cada detalhe do processo para que você se sinta confiante e bem atendido. Aqui, seu carro está em boas mãos!</h3>
             </div>   
             </div>
 
@@ -183,9 +190,9 @@ function PageMecanica() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="rounded-xl border-2 border-margentinha"
                 ></iframe>
-                <p className="mt-2">Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+                
               </div>
-
+              
               <div className="flex flex-col items-center justify-center space-y-6 w-full ml-8">
         
                 <div className="border border-rosinha p-6 text-center w-full max-w-sm">
@@ -198,18 +205,34 @@ function PageMecanica() {
                       placeholder="Digite sua avaliação"
                       size="small"
                       className="w-48"
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
+                      sx={{
+                        '& .MuiOutlinedInput-root': {
+                          '& fieldset': {
+                            borderColor: '#d3d3d3', 
+                          },
+                          '&:hover fieldset': {
+                            borderColor: '#e9bdc0', 
+                          },
+                          '&.Mui-focused fieldset': {
+                            borderColor: '#951b4a', 
+                          },
+                        },
+                      }}
                     />
                     <Button
                       variant="outlined"
                       size="large"
                       sx={{
-                        borderColor: '#951b4a', 
-                        color: '#951b4a', 
+                        borderColor: '#951b4a',
+                        color: '#951b4a',
                         '&:hover': {
                           borderColor: '#951b4a',
-                          backgroundColor: 'rgba(149, 27, 74, 0.1)', 
+                          backgroundColor: 'rgba(149, 27, 74, 0.1)',
                         },
                       }}
+                      onClick={handleButtonClick} 
                     >
                       OK
                     </Button>
@@ -236,8 +259,35 @@ function PageMecanica() {
                   </Button>
                 </div>
               </div>
+              
           </div>
+          <p className="mt-3 ml-1">{mecanica.location}</p>
+
+          <div className="mt-8 mb-6 flex items-center justify-center space-x-16">
+         
+            <div className="text-center flex flex-col items-center">
+              <div className="flex items-center">
+                <img src={userMarcia} alt="" className="w-20 h-20 rounded-full" />
+                <h1 className="ml-4 text-margentinha font-bold text-xl">Marcia Mendes</h1>
+              </div>
+              <p className="mt-4 italic max-w-2xs">
+                “Levei meu carro para fazer uma revisão completa na oficina e fiquei extremamente satisfeita com o serviço. A equipe foi muito atenciosa e resolveu todos os problemas do meu veículo com rapidez e eficiência. Além disso, explicaram cada detalhe do que foi feito, algo que eu nunca havia visto antes em outros lugares. Agora meu carro está rodando como novo! Super recomendo.“
+              </p>
+            </div>
+            <StyledDivider orientation="vertical" variant="middle" flexItem className="mx-8" />
+            <div className="text-center flex flex-col items-center">
+              <div className="flex items-center">
+                <img src={userClaudia} alt="" className="w-20 h-20 rounded-full" />
+                <h1 className="ml-4 text-margentinha font-bold text-xl">Cláudia Nunes</h1>
+              </div>
+              <p className="mt-4 italic max-w-2xs">
+                “Precisei de um reparo de emergência e essa oficina foi simplesmente incrível! Conseguiram me atender no mesmo dia e o conserto foi feito de maneira impecável. O atendimento foi muito profissional e o preço justo. A mecânica explicou tudo com muita paciência, o que me deixou muito segura em deixar meu carro lá. Sem dúvida, ganharam uma cliente fiel!“
+              </p>
+            </div>
+          </div>
+
         </div>
+ 
       </>
     );
   }
