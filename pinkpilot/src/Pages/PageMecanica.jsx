@@ -8,6 +8,8 @@ import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
 
+import { HeartIcon } from '@heroicons/react/solid';
+
 import Atendimentos from '../../public/atend.svg'
 import userMarcia from '../../public/avaliacaoMarcia.svg'
 import userClaudia from '../../public/avaliacaoClaudia.svg'
