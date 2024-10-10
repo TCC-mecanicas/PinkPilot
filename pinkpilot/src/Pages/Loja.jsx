@@ -1,14 +1,13 @@
 import CardsProd from "../Componentes/CardsProd/CardsProd";
 import Pesq from "../Componentes/Pesq/Pesq";
-import { HeartIcon } from '@heroicons/react/solid';
+import { Link } from "react-router-dom";
+//import PageCarrinho from "./PageCarrinho";
 
 function Loja() {
     return ( 
         <>
-        <div>
-            <Pesq/>
-            <HeartIcon className="h-6 w-6 text-red-500" aria-hidden="true" />
-        </div>
+        <Pesq/>
+        <Link to="/carrinho">carrinho</Link>
         <CardsProd/>
         </>
      )
