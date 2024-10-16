@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { FaShoppingCart } from 'react-icons/fa';
+
 const Carrinho = () => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -21,12 +23,12 @@ const Carrinho = () => {
   return (
     <>
       <div className="flex items-center justify-center py-8">
-        <button
-          onClick={checkoutHandler}
-          className="py-2 px-10 rounded bg-indigo-600 hover:bg-indigo-700 text-white"
-        >
-          Open Modal
-        </button>
+      <button
+      onClick={checkoutHandler}
+      className="border-2 text-margentinha mr-3"
+    >
+      <FaShoppingCart size={25} />
+    </button>
       </div>
 
       <div
@@ -53,7 +55,7 @@ const Carrinho = () => {
             </div>
             <p className="lg:text-4xl text-3xl font-black leading-10 text-gray-800 dark:text-white pt-3">Carrinho</p>
 
-            <div className="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50">
+            <div className="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-500">
               <div className="md:w-4/12 2xl:w-1/4 w-full">
                 <img src="https://i.ibb.co/SX762kX/Rectangle-36-1.png" alt="Black Leather Bag" className="h-full object-center object-cover md:block hidden" />
               </div>
@@ -83,33 +85,33 @@ const Carrinho = () => {
             </div>
           </div>
 
-          <div className="lg:w-96 md:w-8/12 w-full bg-gray-100 dark:bg-gray-900 h-full">
+          <div className="lg:w-96 md:w-8/12 w-full bg-margentinha dark:bg-gray-900 h-full">
             <div className="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6 justify-between overflow-y-auto">
               <div>
-                <p className="lg:text-4xl text-3xl font-black leading-9 text-gray-800 dark:text-white">Subtotal</p>
+                <p className="lg:text-4xl text-3xl font-black leading-9 text-white dark:text-white">Subtotal</p>
                 <div className="flex items-center justify-between pt-16">
-                  <p className="text-base leading-none text-gray-800 dark:text-white">Produtos</p>
-                  <p className="text-base leading-none text-gray-800 dark:text-white">R$ 140,00</p>
+                  <p className="text-base leading-none text-white dark:text-white">Produtos</p>
+                  <p className="text-base leading-none text-white dark:text-white">R$ 140,00</p>
                 </div>
                 <div className="flex items-center justify-between pt-5">
-                  <p className="text-base leading-none text-gray-800 dark:text-white">Envio</p>
-                  <p className="text-base leading-none text-gray-800 dark:text-white">R$ 10,00</p>
+                  <p className="text-base leading-none text-white dark:text-white">Envio</p>
+                  <p className="text-base leading-none text-white dark:text-white">R$ 10,00</p>
                 </div>
                 <div className="flex items-center justify-between pt-5">
-                  <p className="text-base leading-none text-gray-800 dark:text-white">Taxas</p>
-                  <p className="text-base leading-none text-gray-800 dark:text-white">R$ 00,00</p>
+                  <p className="text-base leading-none text-white dark:text-white">Taxas</p>
+                  <p className="text-base leading-none text-white dark:text-white">R$ 00,00</p>
                 </div>
               </div>
               <div>
                 <div className="flex items-center pb-6 justify-between lg:pt-5 pt-20">
-                  <p className="text-2xl leading-normal text-gray-800 dark:text-white">Total</p>
-                  <p className="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white">R$ 150</p>
+                  <p className="text-2xl leading-normal text-white dark:text-white">Total</p>
+                  <p className="text-2xl font-bold leading-normal text-right text-white dark:text-white">R$ 150</p>
                 </div>
                 <button
-                  onClick={() => alert('Proceeding to checkout')}
-                  className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white dark:hover:bg-gray-700"
+                  onClick={() => alert('Estamos trabalhando nisso!')}
+                  className="text-base leading-none w-full py-5 bg-white rounded-md text-margentinha text-xl font-bold dark:hover:bg-gray-700"
                 >
-                  Checkout
+                  Ir para pagamento
                 </button>
               </div>
             </div>
