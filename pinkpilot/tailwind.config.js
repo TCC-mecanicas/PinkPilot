@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+  /** @type {import('tailwindcss').Config} */
 
 const withMt = require("@material-tailwind/react/utils/withMT");
 
@@ -12,6 +12,7 @@ module.exports = withMt({
   theme: {
     extend: {
       colors: {
+        "teste": "#E6E6FA",
         "preto": "#4a3a3a",
         "margentinha": "#951b4a",
         "rosinha": "#e9bdc0", //card3

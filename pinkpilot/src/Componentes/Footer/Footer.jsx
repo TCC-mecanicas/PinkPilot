@@ -50,7 +50,7 @@ function Footer(){
           <div className="flex flex-wrap space-x-2">
             <a href="#" className="hover:text-gray-300">© 2024 PinkPilot, Inc.</a>
             <span>|</span>
-            <a href="#" className="hover:text-gray-300"><Link to="/">Mecânicas</Link></a>
+            <a href="#" className="hover:text-gray-300"><Link to="/">Menu</Link></a>
             <span>|</span>
             <a href="#" className="hover:text-gray-300"><Link to="/comunidade">Comunidade</Link></a>
             <span>|</span>

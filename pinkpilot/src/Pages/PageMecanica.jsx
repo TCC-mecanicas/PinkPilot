@@ -150,7 +150,7 @@ function PageMecanica() {
   
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 ">
             <div className="col-span-1 border-2 border-margentinha rounded-xl">
-              <img src={`../../public/${mecanica.Banner}`} alt={mecanica.name} className="w-full h-96 object-cover rounded-lg shadow-lg" />
+              <img src={`/${mecanica.Banner}`} alt={mecanica.name} className="w-full h-96 object-cover rounded-lg shadow-lg" />
             </div>
   
             <div className="col-span-1">

@@ -13,7 +13,6 @@ import Cadastro from './Pages/Cadastro.jsx'
 import Perfil from './Pages/Perfil.jsx'
 import PageProdutos from './Pages/PageProdutos.jsx' 
 import PageMecanica from './Pages/PageMecanica.jsx'
-import PageFav from './Pages/PageFav.jsx'
 
 
 const router = createBrowserRouter(
@@ -31,8 +30,7 @@ const router = createBrowserRouter(
         { path: "cadastro", element: <Cadastro /> },
         { path: "perfil",element: <Perfil/>},
         { path: "produto/:id", element: <PageProdutos /> },
-        { path: "mecanica/:id", element: <PageMecanica/>},
-        { path: "favoritos", element: <PageFav/>}
+        { path: "mecanica/:id", element: <PageMecanica/>}
       ]
     }
   ]
