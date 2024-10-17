@@ -37,7 +37,7 @@ const Carrinho = () => {
       <div className="flex items-center justify-center py-2">
       <button
       onClick={checkoutHandler}
-      className="    text-margentinha mr-3"
+      className="text-margentinha mr-3"
     >
       <FaShoppingCart size={30} />
     </button>

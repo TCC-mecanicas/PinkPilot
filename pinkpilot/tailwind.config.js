@@ -11,6 +11,9 @@ module.exports = withMt({
   ], 
   theme: {
     extend: {
+      backgroundImage: {
+        "home": "url('/teste.jpg')",
+      },
       colors: {
         "teste": "#E6E6FA",
         "preto": "#4a3a3a",
