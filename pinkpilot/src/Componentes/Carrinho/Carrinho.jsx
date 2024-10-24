@@ -2,8 +2,9 @@ import { useState } from "react";
 import { IconButton } from "@material-tailwind/react";
 import { IoTrash } from "react-icons/io5";
 import { FaShoppingCart } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
-const Carrinho = () => {
+const Carrinho = ({ cartItems, removeFromCart }) => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
@@ -26,10 +27,6 @@ const Carrinho = () => {
   const favoritar = () => {
     setIsFavorited(!isFavorited);
   };
-
-  const Remover = () => {
-    setIsRemoved(!isRemoved);
-  }
 
   return (
     <>
@@ -69,25 +66,26 @@ const Carrinho = () => {
             <hr className="h-px mt-1 border-0 bg-black p-0 mt-1 mb-6"></hr>
 
             {/* Card do Produto */}
-            <div className="md:flex items-stretch p-3 bg-teste rounded-md shadow-md">
+            {cartItems.length > 0 ? (
+              cartItems.map((item) =>(
+            <div key={item.id} className="md:flex items-stretch p-3 bg-teste rounded-md shadow-md mb-6">
               <div className="md:w-4/12 2xl:w-1/4 w-full">
-                <img src="https://i.ibb.co/SX762kX/Rectangle-36-1.png" alt="Black Leather Bag" className="h-full object-center object-cover md:block hidden" />
+                <img src={item.imageSrc} alt={item.imageAlt} className="w-[180px] h-[180px] object-center object-cover md:block hidden" />
               </div>
               <div className="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                 <div className="flex items-center justify-between w-full pt-1">
-                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">Kit mochila para motociclista</p>
+                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">{item.name}</p>
                   <select
                     aria-label="Select quantity"
-                    className="py-2 px-1 bg-teste rounded-md border border-margentinha mr-6 focus:outline-none "
+                    className="py-2 px-1 bg-teste rounded-md border border-margentinha mr-2 ml-2 focus:outline-none "
                   >
                     <option>01</option>
                     <option>02</option>
                     <option>03</option>
                   </select>
                 </div>
-                <p className="text-xs leading-3 text-gray-600 dark:text-white pt-2">Tamanho: 60 centímetros</p>
-                <p className="text-xs leading-3 text-gray-600 dark:text-white py-4">Cor: Preto</p>
-                <p className="w-96 text-xs leading-3 text-gray-600 dark:text-white">Material: 100% couro</p>
+                <p className="text-xs leading-3 text-gray-600 dark:text-white pt-2">Descrição: {item.description}</p>
+                <p className="text-xs leading-3 text-gray-600 dark:text-white py-4">Avaliações: {item.rating}</p>
                 <div className="flex items-center justify-between pt-5">
                 <div className="flex items-center">
                     <IconButton
@@ -104,16 +102,20 @@ const Carrinho = () => {
                       </svg>
                     </IconButton>
                     <IconButton
-                      onClick={Remover}
+                      onClick={() => removeFromCart(item.id)}
                       className="text-gray-600 bg-teste ml-3"
                     >
                       <IoTrash size={24} />
                     </IconButton>
                   </div>
-                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">R$ 140,00</p>
+                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">{item.price}</p>
                 </div>
               </div>
             </div>
+              ))
+            ) : (
+              <p className="text-center text-gray-600 dark:text-white mt-5">Seu carrinho está vazio</p>
+            )}
           </div>
 
           <div className="lg:w-96 md:w-8/12 w-full bg-margentinha dark:bg-gray-900 h-full">
@@ -151,6 +153,22 @@ const Carrinho = () => {
       </div>
     </>
   );
+};
+
+Carrinho.propTypes = {
+  cartItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      imageSrc: PropTypes.string.isRequired,
+      imageAlt: PropTypes.string,
+      size: PropTypes.string,
+      color: PropTypes.string,
+      material: PropTypes.string,
+    })
+  ).isRequired,
+  removeFromCart: PropTypes.func.isRequired,
 };
 
 export default Carrinho;

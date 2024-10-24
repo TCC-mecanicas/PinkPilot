@@ -3,7 +3,7 @@ import { IoHeart, IoTrash } from "react-icons/io5";
 import { IconButton } from "@material-tailwind/react";
 import { FaShoppingCart } from 'react-icons/fa';
 
-const Carrinho = () => {
+const Favoritos = () => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
@@ -127,4 +127,4 @@ const Carrinho = () => {
   );
 };
 
-export default Carrinho;
+export default Favoritos;
