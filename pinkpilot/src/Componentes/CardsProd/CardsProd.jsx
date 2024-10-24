@@ -1,5 +1,6 @@
 import { Card, CardBody, Typography, IconButton, Button} from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from 'react-icons/fa';
 import { useState } from "react";
 
 const products = [
@@ -185,51 +186,60 @@ function CardsProd() {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-black ml-10 mt-5">Mais vendidas</h2>
-      <div className="m-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
+      <h2 className="text-2xl font-bold text-black ml-10 mt-5">Mais vendidos</h2>
+      <div className="m-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {products.map((product) => (
           <div key={product.id} className="group relative">
-            <Card className="max-w-xs h-96 shadow-lg rounded-lg overflow-hidden">
+            <Card className="max-w-xs shadow-lg rounded-lg overflow-hidden flex flex-col h-full">
               <Link to={`/produto/${product.id}`}>
                 <div className="relative">
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
-                    className="w-70 h-60 object-cover"
+                    className="w-full h-60 object-cover"
                   />
                 </div>
               </Link>
 
-              <CardBody>
-                <div className="flex items-center space-x-1 mb-3">
-                  <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.494 6.91l6.564-.955L10 .4l2.942 5.555 6.564.955-4.751 4.635 1.123 6.545z" />
-                  </svg>
-                  <Typography className="text-sm text-gray-700">
-                    {product.rating} · {product.reviews}
+              <CardBody className="p-4 flex flex-col justify-between h-full">
+                <div className="mb-3">
+                  <div className="flex items-center space-x-1">
+                    <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.494 6.91l6.564-.955L10 .4l2.942 5.555 6.564.955-4.751 4.635 1.123 6.545z" />
+                    </svg>
+                    <Typography className="text-sm text-gray-600">
+                      {product.rating} · {product.reviews}
+                    </Typography>
+                  </div>
+                  <Typography variant="h6" className="text-base text-gray-800 mt-2">
+                    {product.description}
                   </Typography>
                 </div>
-                <Typography variant="h6" className="text-sm text-gray-700">
-                  {product.description}
-                </Typography>
-                <Typography variant="body2" className="mt-2 font-bold text-gray-800">
-                  A partir de {product.price}
-                </Typography>
 
-                <div className="absolute bottom-4 right-2 ">
-                  <IconButton
-                    onClick={() => favoritar(product.id)}
-                    className="text-red-500 bg-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill={favorites.includes(product.id) ? "red" : "none"}
-                      stroke="currentColor"
+                <div className="flex items-center justify-between mt-auto">
+                  <Typography variant="body2" className="font-bold text-gray-800">
+                    A partir de {product.price}
+                  </Typography>
+                  <div className="flex space-x-2">
+                    <IconButton
+                      onClick={() => favoritar(product.id)}
+                      className={`text-red-500 bg-white ${
+                        favorites.includes(product.id) ? "text-red-500" : "text-gray-400"
+                      }`}
                     >
-                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                    </svg>
-                  </IconButton>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill={favorites.includes(product.id) ? "red" : "none"}
+                        stroke="currentColor"
+                      >
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                      </svg>
+                    </IconButton>
+                    <IconButton className="text-gray-600 bg-white">
+                      <FaShoppingCart size={24} />
+                    </IconButton>
+                  </div>
                 </div>
               </CardBody>
             </Card>
