@@ -8,7 +8,6 @@ const Carrinho = ({ cartItems, removeFromCart }) => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
-  const [isRemoved, setIsRemoved] = useState(false);
 
   const checkoutHandler = () => {
     if (isCheckoutOpen) {

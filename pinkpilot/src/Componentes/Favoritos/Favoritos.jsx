@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { IoHeart, IoTrash } from "react-icons/io5";
 import { IconButton } from "@material-tailwind/react";
-import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Favoritos = () => {
+const Favoritos = ({ favoritosItems, removeFromFavoritos}) => {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
-  const [isFavorited, setIsFavorited] = useState(false);
-  const [isRemoved, setIsRemoved] = useState(false);
 
+  
   const checkoutHandler = () => {
     if (isCheckoutOpen) {
       setIsAnimatingOut(true);
@@ -20,14 +20,6 @@ const Favoritos = () => {
       setIsCheckoutOpen(true);
     }
   };
-
-  const favoritar = () => {
-    setIsFavorited(!isFavorited);
-  };
-
-  const Remover = () => {
-    setIsRemoved(!isRemoved);
-  }
 
   return (
     <>
@@ -63,68 +55,61 @@ const Favoritos = () => {
             <hr className="h-px mt-1 border-0 bg-black p-0 mb-6"></hr>
 
             {/* Card do Produto */}
-            <div className="md:flex items-stretch p-3 bg-teste rounded-md shadow-md">
+            {favoritosItems.length > 0 ? (
+              favoritosItems.map((item) =>(
+            <div key={item.id} className="md:flex items-stretch p-3 bg-teste rounded-md shadow-md mb-6">
+              
               <div className="md:w-4/12 2xl:w-1/4 w-full">
-                <img
-                  src="https://i.ibb.co/SX762kX/Rectangle-36-1.png"
-                  alt="Black Leather Bag"
-                  className="h-full object-center object-cover md:block hidden rounded-md"
-                />
+                <Link to={`/produto/${item.id}`}>
+                  <img src={item.imageSrc} alt={item.imageAlt} className="w-[180px] h-[180px] object-center object-cover md:block hidden" />
+                </Link>
               </div>
+              
               <div className="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
                 <div className="flex items-center justify-between w-full pt-1">
-                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">
-                    Kit mochila para motociclista
-                  </p>
+                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">{item.name}</p>
+                  
                 </div>
-                <p className="text-xs leading-3 text-gray-600 dark:text-gray-300 pt-2">
-                  Tamanho: 60 centímetros
-                </p>
-                <p className="text-xs leading-3 text-gray-600 dark:text-gray-300 py-4">
-                  Cor: Preto
-                </p>
-                <p className="w-96 text-xs leading-3 text-gray-600 dark:text-gray-300">
-                  Material: 100% couro
-                </p>
+                <p className="text-xs leading-3 text-gray-600 dark:text-white pt-2">Descrição: {item.description}</p>
+                <p className="text-xs leading-3 text-gray-600 dark:text-white py-4">Avaliações: {item.rating}</p>
                 <div className="flex items-center justify-between pt-5">
-                  <div className="flex items-center">
+                <div className="flex items-center">
                     <IconButton
-                      onClick={favoritar}
-                      className="text-red-500 bg-teste"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill={isFavorited ? "red" : "none"}
-                        stroke="currentColor"
-                      >
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                      </svg>
-                    </IconButton>
-                    <IconButton
-                      onClick={Remover}
-                      className="text-margentinha bg-teste ml-3"
-                    >
-                      <FaShoppingCart size={24} />
-                    </IconButton>
-                    <IconButton
-                      onClick={Remover}
+                      onClick={() => removeFromFavoritos(item.id)}
                       className="text-gray-600 bg-teste ml-3"
                     >
                       <IoTrash size={24} />
                     </IconButton>
                   </div>
-                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">
-                    R$ 140,00
-                  </p>
+                  <p className="text-base font-black leading-none text-gray-800 dark:text-white">{item.price}</p>
                 </div>
               </div>
             </div>
+              ))
+            ) : (
+              <p className="text-center text-gray-600 dark:text-white mt-5">Adicione produtos aos seus favoritos! </p>
+            )}
+          </div>
           </div>
         </div>
-      </div>
     </>
   );
+};
+
+Favoritos.propTypes = {
+  favoritosItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      imageSrc: PropTypes.string.isRequired,
+      imageAlt: PropTypes.string,
+      size: PropTypes.string,
+      color: PropTypes.string,
+      material: PropTypes.string,
+    })
+  ).isRequired,
+  removeFromFavoritos: PropTypes.func.isRequired,
 };
 
 export default Favoritos;
