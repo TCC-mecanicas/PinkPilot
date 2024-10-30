@@ -45,8 +45,7 @@ function ContSobre(){
         <div className="flex-1 text-center ">
           <h2 className="text-4xl font-bold text-margentinha mb-4">Nossa missão</h2>
           <p className="text-gray-700 text-2xl">
-          Nossa missão aqui na Pink Pilot é revolucionar o mercado automotivo e dar às mulheres a segurança e o conforto que elas merecem na hora de cuidar do seu carro, 
-          oferecendo um ambiente acolhedor e cheio de confiança, onde cada mulher possa ter acesso a serviços de qualidade, sem medo de ser enganada.
+          Criar um ambiente acolhedor onde cada mulher possa cuidar do seu carro sem medo de se sentir desconfortável ou de ser enganada. Além disso, vamos compartilhar vídeos curtos em nossas redes sociais explicando a funcionalidade dos carros, para que todos possam entender melhor.
           </p>
         </div>
         {/* Contêiner para a imagem */}
@@ -72,8 +71,7 @@ function ContSobre(){
       <div className="flex-1 text-center">
         <h2 className="text-4xl font-bold text-margentinha mb-4">Nossa missão</h2>
         <p className="text-gray-700 text-2xl">
-        Para isso, conectamos você a oficinas parceiras que foram cuidadosamente selecionadas e que são especialistas em atender as necessidades do público feminino. 
-        Com a Pink Pilot, você tem a certeza de que seu carro estará em boas mãos, e você poderá focar em outras coisas que realmente importam!
+        Nossa ideia surgiu depois de ver mulheres enfrentando problemas em oficinas mecânicas, muitas vezes se sentindo enganadas e desconfortáveis. Decidimos criar um site que ofereça confiança e segurança para as mulheres quando precisarem de serviços automotivos. Além disso,com a PinkChat, oferecemos uma rede de oficinas de confiança, priorizando o respeito e a transparência nos serviços prestados por eles. 
         </p>
       </div>
       {/* Contêiner para a imagem */}
@@ -95,7 +93,7 @@ function ContSobre(){
                     </svg>
                 </h3>
                 <p className="text-lg text-gray-500 mb-16">                
-                  Dictumst vitae habitant consequat vestibulum a nisi at. Id at sit felis ipsum id facilisis vitae vitae vel. Adipiscing aliquet mauris quisque et quis urna molestie gravida tortor. Gravida pellentesque purus placerat enim tincidunt sagittis aliquet. Ut vulputate vestibulum et ipsum. Interdum pellentesque pellentesque vitae accumsan amet.
+                Buscam tornar as oficinas mecânicas mais seguras e confiáveis para mulheres. Gabrielly elabora estratégias de marketing e finanças, enquanto a Giovanna cria uma experiência de usuário intuitiva. Luana garante o funcionamento do back-end, Isabella traz criatividade ao design e Mariana combina design e marketing para fortalecer a identidade visual. Em conjunto, transformam a maneira como as mulheres se conectam com o universo automotivo, promovendo a segurança e conforto na palma da sua mão.
                 </p>
                 <button 
                 className="cursor-pointer py-3 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none px-8 w-60 bg-margentinha hover:text-margentinha text-white shadow-[3px_3px_0px_#e9bdc0] text-base font-semibold transition-all duration-300 block rounded-2xl hover:bg-rosinha mx-auto lg:mx-0"
