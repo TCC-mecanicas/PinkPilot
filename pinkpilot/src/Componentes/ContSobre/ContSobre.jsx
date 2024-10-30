@@ -45,9 +45,8 @@ function ContSobre(){
         <div className="flex-1 text-center ">
           <h2 className="text-4xl font-bold text-margentinha mb-4">Nossa missão</h2>
           <p className="text-gray-700 text-2xl">
-            Oferecer confiança e segurança para as mulheres quando precisarem de serviços automotivos.
-            Além disso, vamos compartilhar vídeos curtos em nossas redes sociais explicando a funcionalidade
-            dos carros, para que todos possam entender melhor.
+          Nossa missão aqui na Pink Pilot é revolucionar o mercado automotivo e dar às mulheres a segurança e o conforto que elas merecem na hora de cuidar do seu carro, 
+          oferecendo um ambiente acolhedor e cheio de confiança, onde cada mulher possa ter acesso a serviços de qualidade, sem medo de ser enganada.
           </p>
         </div>
         {/* Contêiner para a imagem */}
@@ -73,9 +72,8 @@ function ContSobre(){
       <div className="flex-1 text-center">
         <h2 className="text-4xl font-bold text-margentinha mb-4">Nossa missão</h2>
         <p className="text-gray-700 text-2xl">
-          Oferecer confiança e segurança para as mulheres quando precisarem de serviços automotivos.
-          Além disso, vamos compartilhar vídeos curtos em nossas redes sociais explicando a funcionalidade
-          dos carros, para que todos possam entender melhor.
+        Para isso, conectamos você a oficinas parceiras que foram cuidadosamente selecionadas e que são especialistas em atender as necessidades do público feminino. 
+        Com a Pink Pilot, você tem a certeza de que seu carro estará em boas mãos, e você poderá focar em outras coisas que realmente importam!
         </p>
       </div>
       {/* Contêiner para a imagem */}
