@@ -18,5 +18,4 @@ Integrantes:
 - Gabrielly Barbosa RM15026
 - Giovanna Luiza RM12390
 - Isabella Hikari RM15101
-- Luana Gomes RM14883
 - Mariana Ayumi RM15030
