@@ -1,4 +1,4 @@
-Projeto TCC - PinkPilot 
+Projeto - PinkPilot 
 
 Vercel: https://pink-pilot-xfq8.vercel.app/
 
